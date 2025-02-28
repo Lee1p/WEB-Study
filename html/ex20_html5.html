@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex20_html5.html -->
+	
+	<h1>HTML5</h1>
+	
+	<form method="POST" action="ex18_ok.jsp">
+	   
+	   <label>이름: <input type="text" size="10"></label>
+	   
+	   <hr>
+	   
+	   <input type="text" size="10" value="이름 입력" onfocus="this.value='';">
+	   <hr>
+	   
+	   <input type="password" size="10" value="암호 입력">
+	   <hr>
+	   
+	   <input type="text"     size="10" placeholder="이름 입력">
+	   <input type="password" size="10" placeholder="암호 입력">
+	   <textarea cols="50" rows="3" placeholder="자기 소개"></textarea>
+	   
+	   <hr>
+	   
+	   <h3>로그인(유효성 검사)</h3>
+	   <div><input type="text" size="10" placeholder="아이디" required value="1"></div>
+	   <div><input type="password" size="10" placeholder="암호" required value="1"></div>
+	   <hr>
+	   
+	   URL: <input type="url">
+	   <hr>
+	   
+	   Email: <input type="email">
+	   <hr>
+	   
+	   숫자: <input type="text">
+	   <hr>
+	   
+	   숫자: <input type="number" min="0" max="100" step="10">
+	   <hr>
+	   
+	   범위(숫자): 
+	   <input type="range" 
+	          oninput="document.getElementById('rtxt').value = this.value;"
+	          min="20" max="500" step="50">
+	   <input type="text" id="rtxt">
+	   <hr>
+	   
+	   색상:
+	   <input type="color"
+	          onchange="document.getElementById('ctxt').value = this.value; document.body.bgColor = this.value;">
+	   <input type="text" id="ctxt">
+	   <hr>
+	   
+	   날짜 시간:
+	   <input type="date">
+	   <hr>
+	   
+	   <input type="month">
+       <hr>
+       
+       <input type="week">
+       <hr>
+       
+       <input type="time">
+       <hr>
+       
+       <input type="datetime">
+       <hr>
+       
+       <input type="datetime-local">
+       <hr>
+       
+       <h2>목록</h2>
+       
+       사원명:
+       <select>
+            <option>홍길동</option>
+            <option>아무개</option>
+            <option>강아지</option>
+       </select>
+       <hr>
+       
+       사원명: <input type="text" size="5" list="list1">
+	   
+	   <datalist id="list1">
+	       <option value="홍길동"></option>
+	       <option value="아무개"></option>
+	       <option value="강아지"></option>
+	   </datalist>
+	   <hr>
+	   
+	   <h2>진행률</h2>
+	   <progress value="0"></progress><br>
+	   <progress value="0.5"></progress><br>
+	   <progress value="1"></progress><br>
+	   <progress max="100" value="50"></progress><br>
+	   
+	   <h2>수치</h2>
+	   <meter value="0"></meter><br>
+	   <meter value="0.5"></meter><br>
+	   <meter value="1"></meter><br>
+	   <meter value="50" min="-100" max="100"></meter><br>
+	   
+	   <meter value="30" min="0" max="100" low="40" high="80"></meter><br>
+	   <meter value="60" min="0" max="100" low="40" high="80"></meter><br>
+	   <meter value="90" min="0" max="100" low="40" high="80"></meter><br>
+	   <hr>
+	   
+	   <details>
+	       <summary>JavaScript란?</summary>
+	       <div>JavaScript는 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구</div>
+	   </details>
+	   <hr>
+	   
+	   <!-- 폼태그내에서 영역을 만드는 역할 -->
+	   <fieldset>
+	       <legend align="center">로그인</legend>
+	       <div>아이디: <input type="text" size="5"></div>
+	       <div>암호:   <input type="text" size="5"></div>
+	   </fieldset>
+	   <hr>
+	   
+	   <!-- 뉴스 서비스 -->
+	   <marquee scrollamount="10" behavior="scroll" direction="down">🚌 속보입니다. 남부 지역에 태풍이 어쩌구 저쩌구</marquee>
+	   
+	   <hr>	   
+	   <input type="submit" value="보내기">
+	</form>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

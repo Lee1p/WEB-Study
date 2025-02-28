@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        #me {
+            border: 10px solid cornflowerblue;
+        }
+        .check {
+            outline: 10px solid darkorange;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex08.html -->
+    <h1>Axis</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+    <div>
+        할아버지
+        <div>
+            큰아버지
+            <div>사촌</div>
+        </div>
+        <div>
+            아버지
+            <div>
+                큰형
+                <div>조카</div>
+            </div>
+            <div>작은형</div>
+            <div id="me">
+                <!-- 중심 -->
+                나
+                <div class="one">자식</div>
+                <div>
+                    자식
+                    <div class="one">손자</div>
+                </div>
+                <div class="one">자식</div>
+            </div>
+            <div>
+                동생
+                <div>조카</div>
+            </div>
+            <div>막내동생</div>
+        </div>
+        <div>
+            작은아버지
+            <div>사촌</div>
+        </div>
+    </div>
+    
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        
+        $('#btn1').click(()=>{
+
+            //자식
+            //- childNodes, children
+            //$('#me').children().addClass('check');
+            //$('#me').children().first().addClass('check');
+            //$('#me').children().last().addClass('check');
+            //$('#me').children().eq(1).addClass('check');
+
+            //$('#me').children().children().addClass('check');
+            //$('#me > div > div').addClass('check');
+
+            //$('#me > div.one').addClass('check');
+            //$('#me').children('.one').addClass('check');
+
+            //나의 모든 자손들 탐색
+            //$('#me').find('.one').addClass('check');
+
+
+            //부모 탐색
+            //- parentNode, parentElement
+            //$('#me').parent().addClass('check');
+            //$('#me').parent().parent().addClass('check');
+            //$('#me').parents('div').addClass('check');
+            //$('#me').parentsUntil('body').addClass('check');
+
+
+            //형제 탐색
+            //- previousSilbling, nextSibling
+            //$('#me').prev().addClass('check');
+            //$('#me').next().addClass('check');
+
+            //$('#me').prevAll().addClass('check');
+            //$('#me').nextAll().addClass('check');
+
+            $('#me').siblings().addClass('check');
+
+            
+
+        });
+
+    </script>
+</body>
+</html>

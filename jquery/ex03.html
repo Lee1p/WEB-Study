@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- ex03.html-->
+     <h1>jQuery Event</h1>
+
+    <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" class="btn">
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+
+        /* 
+        
+            1. BOM
+            - <input onclick="">
+            - btn.onclick = function() {}
+            - btn.onclick = null
+
+            2. DOM
+            - btn.addEventListner('click', 함수)
+            - btn.removeEventListner('click', 함수);
+
+            3. jQuery
+            - 이벤트 함수
+                3.1 전용 함수
+                    - 객체.이벤트함수(콜백함수)
+
+                3.2 범용 함수
+                    - 객체.on(이벤트명,콜백함수)
+                    범용 함수가 DOM이랑 똑같은 방식이다.
+        */
+
+        // const $ = jQuery;
+
+        //전용함수 (이게 제이쿼리에서 이벤트를 거는 방법이다.)
+        // $('#btn1').click(function() {
+        //     alert();
+        // });
+
+
+        // //범용함수
+        // $('#btn2').on('click', function(){
+        //     alert();
+        // });
+
+        // $('#btn3').click(() => {
+        //     $('#btn1').off('click');
+        //     $('#btn2').off('click');
+        // });
+
+        /* 
+        
+            전용함수 , 범용함수 차이점
+
+            전용함수는 간단한 사용이다. click 이벤트에만 사용 가능 변경 x 
+            
+            범용함수는 유연성 .on()은 이벤트 위임을 포함한 모든 이벤트에 대해
+            사용 할 수있음. click 이벤트뿐만 아니라, 다른 이벤트에 대해서도 사용 가능
+
+            따라서, 두 방식의 차이는 주로 유연성과 사용 목적에 있다.
+
+        */
+
+        //버튼 3개 > 동일한 이벤트 추가
+        // document.querySelectorAll('.btn').forEach(btn => {
+        //     btn.onclick = function() {
+        //         alert(event.target.value);
+        //     };
+        // });
+
+        $('.btn').click(() => {
+            alert(event.target.value);
+        });
+
+
+    </script>
+</body>
+</html>

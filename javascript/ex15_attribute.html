@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- ex15_attribute.html-->
+    <h1>자바스크립트로 태그의 속성을 제어하기</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="끄기" name="btn1">
+    </form>
+
+    <script>
+
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+        
+        btn1.onclick = m1;
+        function m1() {
+
+            /* 
+            
+                HTML 속성 제어하기
+
+                1. HTML 태그가 가지는 모든 속성은 이미 DOM에서 구현되어 있다.
+                    - HTML의 속성명 > (거의 그대로) > JavaScript의 프로퍼티명
+                    ex) <input type="text" name="txt1" size="10">
+                        txt1.size = 20;
+                2. HTML 속성명이 복합어 > JavaScript에선 캐멀 표기법으로 작성
+                    ex) <body bgcolor="red">
+                        body.bgcolor = 'red';
+                3. HTML 속성값이 플래그 타입 > boolean으로 조작
+                    ex) <input type="text" readonly>
+                        txt1.readOnly = true;
+                4. HTML 속성값이 열거형/문자열/URL > 문자열 조작
+                    ex) <p align="center">
+                        p.align = 'center';
+                
+                
+            */
+
+            //대부분의 속성(프로퍼티)는 getter/setter 모두 지원함
+            // alert(txt1.value);
+            // txt1.value = '안녕하세요.';
+            
+            // txt1.type = 'radio'; 이런 행동은 되도록 금지
+            // txt1.name = 'txt2'; 절대 금지! 식별자 바꾸는거임.
+            
+            //버튼 1개로 > On/Off > 토글 버튼(Toggle Button)
+            if (window.document.body.bgColor != 'black') {
+                window.document.body.bgColor = 'black';
+                btn1.value = '켜기';
+            } else {
+                window.document.body.bgColor = 'white';
+                btn1.value = '끄기';
+            }
+
+
+        }//btn1.click
+
+
+    </script>
+</body>
+</html>

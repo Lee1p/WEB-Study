@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            박스 모델, Box Model
+            - HTML의 모든 태그는 화면에 출력될 때 사각형으로 출력된다.
+            - 이 특징을 기반으로 적용되는 CSS의 규칙과 속성을 박스 모델이라고 한다.
+            - 박스 모델은 크게 4가지 영역으로 구분된다.
+                1. 콘텐츠 영역(Content Area)
+                    - 실제 내용이 표시되는 영역
+                    - width, height 속성으로 크기를 조절
+                2. 패딩 영역(Padding Area)
+                    - 콘텐츠 영역과 테두리(Border) 사이의 여백
+                    - padding 속성으로 크기를 조절
+                3. 테두리 영역(Border Area)
+                    - 콘텐츠 영역을 감싸는 테두리
+                    - border 속성으로 크기, 색상, 스타일을 조절
+                4. 여백 영역(Margin Area)
+                    - 테두리(Border)와 다른 요소와의 간격
+                    - margin 속성으로 크기를 조절
+        */
+        
+        #box1{
+            background-color: yellow;
+            /* border:100px pink double; */
+            
+            /* border: 10px solid red;
+            border-color: pink; */
+
+        }
+
+        #box2{
+            border-color:pink; /* 테두리 색상 */
+            border-width: 100px; /* 테두리 두께 */
+            border-style: double; /* 테두리 스타일 */
+            border-color: red orange green blue;
+
+            /* top(12시) > right/left > bottom */
+            /* border-color: red orange green; */
+
+
+            border-color: red orange green blue;
+
+
+        }
+
+        #box3{
+            border:100px pink double;
+            
+        }
+        
+        body {
+            background-image: url("images/이재명.jpg");
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex16_box.html-->
+    <h1 align="center">CSS 박스 모델</h1>
+    <div align="center" id="box1" class="box">상자1</div>
+    <div align="center" id="box2" class="box">상자2</div>
+    <div align="center" id="box3" class="box">상자3</div>
+
+</body>
+</html>

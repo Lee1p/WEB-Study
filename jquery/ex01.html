@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- webapp > jquery > ex01.html -->
+     
+    <input type="text" name="txt1" id="txt1">
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
+    <script>
+
+        /*  
+
+            자바스크립트
+            1. 순수 자바스크립트
+                - ES6
+                - 바닐라 스크립트
+
+            2. 이전 세대 라이브러리(*.jar)
+                - dozo, protype > jQuery
+
+            3. 요즘 세대 라이브러리(*.jar)
+                - angular, vue > react
+
+            
+            jQuery
+            - https://jquery.com
+
+
+            jQuery 설치
+            1. 로컬 설치
+                - 파일 다운로드 + 참조
+            2. CDN
+                - 다른 서버의 자원 + 참조
+
+        */
+
+        console.log(jQuery); //함수명
+
+        //1. BOM > DOM 트리
+        window.document.all.txt1.value = "BOM";
+
+        //2. DOM > DOM 트리 > getXXX or axis or querySelector
+        document.getElementById('txt1').value = "DOM";
+
+        //3. jQuery
+        //- document.querySelector()
+        jQuery('#txt1').val('JQuery');
+
+    </script>
+    
+</body>
+</html>

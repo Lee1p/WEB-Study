@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one { color: blue; }
+        .two { background-color: gold; }
+    </style>
+</head>
+<body>
+    <!-- ex05.html -->
+    <h1>jQuery + CSS</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+    <div id="box1">상자1</div>
+    <div id="box2">상자2</div>
+    
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        
+        $('#btn1').click(()=>{
+
+            //jQuery 함수 패턴
+            
+            //범용 함수
+            //- obj.aaa(속성): 읽기
+            //- obj.aaa(속성,값): 쓰기
+
+            //전용 함수
+            //- obj.bbb(): 읽기
+            //- obj.bbb(값): 쓰기
+
+            //alert($('#box1').css('color'));
+            //$('#box1').css('color', 'blue');
+
+            //alert($('#box1').width());
+            //$('#box1').width(500);
+
+            //alert(window.getComputedStyle(document.getElementById('box1')).getPropertyValue('color'));
+            //alert($('#box1').css('color'));
+
+            //css('CSS속성명'): 읽기
+            //css('CSS속성명', '값'): 쓰기
+
+            // $('#box1').css('color', 'blue');
+            // $('#box1').css('background-color', 'gold');
+            // $('#box1').css('font-size', '3rem');
+
+            // $('#box1').css('color', 'blue')
+            //           .css('background-color', 'gold')
+            //           .css('font-size', '3rem');
+
+            // $('#box1').css({
+            //     color: 'blue',
+            //     backgroundColor: 'gold',
+            //     'font-size': '3rem'
+            // });
+
+
+            //DOM
+            //box1.className = 'one';
+
+            //box1.classList.add('one')
+            //box1.classList.remove('one')
+            //box1.classList.contains('one')
+
+            //jQuery
+            //$('#box1').addClass('one');
+            //$('#box1').addClass('two');
+            //$('#box1').removeClass('one');
+            //$('#box1').toggleClass('two');
+
+            
+
+        });
+
+    </script>
+</body>
+</html>

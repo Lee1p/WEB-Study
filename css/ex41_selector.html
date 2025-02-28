@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list input[type=text] {
+                display: block;
+                margin-bottom: 5px;
+                outline: none;
+                background-color: #fff;
+                border: 1px solid #767676;
+                padding: 4px; 
+                color: #333;
+        }
+
+        #list input:required {
+            background-color: gold;
+        }
+
+        #list input:enabled {background-color: gray;}
+
+    </style>
+</head>
+<body>
+    <!-- ex41_selector.html-->
+    <h1>Form</h1>
+    <div id="id">
+        <input type="text" value="1" required>
+        <input type="text" value="2" readonly>
+        <input type="text" value="3" readonly>
+        <input type="text" value="4">
+        <input type="text" value="5" required>
+        <input type="text" value="6" disabled>
+        <input type="text" value="7">
+        <input type="text" value="8">
+        <input type="text" value="9">
+        <input type="text" value="10">
+    </div>
+</body>
+</html>

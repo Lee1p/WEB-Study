@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            border: 5px solid black;
+            background-color: gold;
+            color: blue;
+            width: 200px;
+            font-weight: bold;
+        }
+        #child {
+            border: 5px solid cornflowerblue;
+            /* 자식의 배경색? > 투명색 */
+            background-color: transparent;
+            /* 자식의 전경색? > 상속O */
+            /* 자식의 너비? 100% */
+
+
+            /* 
+            
+                부모의 속성 > 상속?
+                - 텍스트와 관련된 속성만 상속된다.
+                - 나머지 속성은 상속이 안된다.
+            
+            */
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex66.html-->
+     <div id="parent">
+        부모의 내용물입니다.
+        <div id="child">자식의 내용물입니다.</div>
+        부모의 내용물입니다.
+     </div>
+</body>
+</html>

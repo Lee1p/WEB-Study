@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 동일한 선택자를 2번 이상 선언 > 가능 
+            1. 속성 충돌 X > 아무 문제 없음 > 각각 모두 적용
+            2. 속성 충돌 O > 마지막에 적용한 속성이 반영
+        
+        */
+
+        /* div{color:blue;}
+        div{background-color: yellow;} */
+
+        /* div{color:blue;}
+        div{color: yellow;} */
+
+        /* 
+            속성 충돌 발생!! > 선택자 우선 순위!!
+            - 서로 다른 선택자가 동일한 태그를 선택했을 때
+              + 같은 속성을 적용 > 누구의 속성을 적용할지?
+              - 점수 계산 > 점수가 가장 높은 선택자를 사용
+             
+            1. tag 선택자: 개당 1점
+            2. class 선택자: 개당 10점
+            3. id 선택자: 개당 100점
+
+        */
+
+        /* body > div#box1.box{color:brown;}
+        div#box1.box{color:green;}
+        div#box1{color:orange;}
+        #box1 {color:yellow;}
+        .box{color:red;}
+        div {color:blue;}
+
+        #txt2 {color:red;}
+
+        .txt {color:blue;} */
+
+        #box1 {color:red;}
+        
+        .box{color:blue;}
+
+
+    </style>
+</head>
+<body>
+    <!-- ex15_selector.html-->
+     <div id="box1" class="box">상자1</div>
+
+     <div>
+     <div id="box2">상자2</div>
+    </div>
+
+    <p class="box"> 상자3</p>
+
+    <hr>
+
+    <input type="text" id="txt1" class="txt"><br>
+    <input type="text" id="txt2" class="txt"><br>
+    <input type="text" id="txt3" class="txt"><br>
+    
+
+</body>
+</html>

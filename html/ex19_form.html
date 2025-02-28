@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex19_form.html -->
+	<!--  
+	
+        <form>의 자식 태그
+        - 입력 양식, 입력 컨트롤
+        
+        <input> 태그
+        - 단독태그
+        - 인라인태그
+        - input.type: 입력 컨트롤 종류
+        - input.name: (서버로 전송할 사용하는) 식별자
+        - input.id: 식별자. CSS, JavaScript에서 주로 사용
+        - input.class: 식별자. CSS, JavaScript에서 주로 사용
+        - input.size: 컨트롤의 너비. 입력받는 글자 수
+        - input.maxlength: 최대 입력 문자 수 + 유효성 검사
+        - input.value: 컨트롤의 (현재) 입력값
+        - input.readonly: 읽기 전용. 플래그형. 입력(X) + 서버 전송(O)
+        - input.disabled: 비활성화. 입력(X) + 서버 전송(X)
+        - input.accesskey: 바로가기(=니모닉, Nemonic). Alt + 키
+        - input.title: 풍선 도움말(주로 컨트롤에서 사용한다.)
+        - input.autofocus: 자동 포커스. 플래그형
+        
+	-->
+	<h1 title="제목입니다.">입력 컨트롤</h1>
+	
+	<form method="GET" action="ex18_ok.jsp">
+	   <label for="txt1">텍스트박스(단일라인):</label>
+	   <input type="text" name="data" id="txt1" class="txt" size="10" maxlength="5" accesskey="s" title="이곳에 나이를 입력하세요.">
+	   
+	   <hr>
+	   
+	   <!--  
+	       암호 상자, Password Box, Masked TextBox
+	       - 대부분의 속성이 텍스트 박스와 동일
+	       - value 속성 사용 금지!!
+	   -->
+	   텍스트 박스(암호):
+	   <input type="password" name="pw">
+	   
+	   <hr>
+	   
+	   <!--  
+	       다중 라인 텍스트 박스
+	       - <textarea></textarea>
+	       - 쌍태그, 인라인태그
+	       - 대부분의 속성은 텍스트 박스와 동일
+	       - maxlength 속성이 없다.
+	       - value 속성이 없다.
+	   -->
+	   
+	   텍스트 박스(다중 라인):
+	   <textarea style="resize: none;" cols="50" rows="5">하나
+둘
+셋</textarea>	   
+	   
+	   <hr>
+	   
+	   <!-- 
+	       체크박스
+	       - 논리값 입력
+	       - 단일 선택 or 다중 선택
+	   -->
+	   
+	   체크박스: <input type="checkbox" checked>
+	   
+	   <h2>약관</h2>
+	   
+	   <!-- 
+	   <input type="checkbox" id="cb1"> 
+	   <label for="cb1">약관에 동의합니다.</label> 
+	   -->
+	   
+	   <label><input type="checkbox"> 약관에 동의합니다.</label>
+	   
+	   <h2>취미</h2>
+	   
+	   <label><input type="checkbox"> 수영</label>
+	   <label><input type="checkbox"> 독서</label>
+	   <label><input type="checkbox"> 코딩</label>
+	   <label><input type="checkbox"> 낮잠</label>
+	   <label><input type="checkbox"> 달리기</label>
+	   
+	   <hr>
+	   
+	   <!--  
+	       라디오 버튼
+	       - 단일 선택
+	   -->
+	   
+	   라디오 버튼: 
+	   <input type="radio" name="rb1" checked> 남자
+	   <input type="radio" name="rb1"> 여자
+	   
+	   <hr>
+	   
+	   취미:
+	   <input type="radio" name="rb2"> 독서
+	   <input type="radio" name="rb2"> 러닝
+	   <input type="radio" name="rb2"> 맛집
+	   
+	   
+	   <hr>
+	   
+	   <!--  
+	       
+	       셀렉트 박스
+	       - 콤보 박스, 드랍다운 리스트
+	       - 단일 선택, 다중 선택
+	       
+	   -->
+	   셀렉트 박스:
+	   <select size="5">
+	       <option>강아지</option>
+	       <option selected>고양이</option>
+	       <option>병아리</option>
+	   </select>
+	   
+	   <hr>
+	   
+	   셀렉트 박스:
+       <select size="5" multiple>
+           <option>강아지</option>
+           <option>고양이</option>
+           <option>병아리</option>
+       </select>
+       
+       
+       <hr>
+       
+       <select>
+            <option>☆☆☆포유류☆☆☆</option>
+            <option>강아지</option>
+            <option>고양이</option>
+            <option>돼지</option>
+            
+            <option>☆☆☆파충류☆☆☆</option>
+            <option>뱀</option>
+            <option>거북이</option>
+            <option>이구아나</option>
+            
+            <option>☆☆☆곤충류☆☆☆</option>
+            <option>매미</option>
+            <option>메뚜기</option>
+            <option>귀뚜라미</option>
+       </select>
+       
+       
+       <select>
+            <optgroup label="포유류">
+	            <option>강아지</option>
+	            <option>고양이</option>
+	            <option>돼지</option>
+            </optgroup>
+            <optgroup label="파충류">            
+	            <option>뱀</option>
+	            <option>거북이</option>
+	            <option>이구아나</option>
+            </optgroup>
+            <optgroup label="곤충류">
+	            <option>매미</option>
+	            <option>메뚜기</option>
+	            <option>귀뚜라미</option>
+            </optgroup>
+       </select>
+	   
+	   <hr>
+	   
+	   <!--  
+	       파일 업로드
+	       - 첨부 파일
+	       - OpenFileDialog > 파일 열기 대화상자
+	   -->
+	   파일 선택: <input type="file">
+	   
+	   <hr>
+	   
+	   <!--  
+	       히든 태그
+	       - 안보이는 컨트롤
+	       - 개발자용
+	       - 데이터를 전송은 해야 하지만, 사용자에게 보이는 안되는 데이터
+	   -->
+	   히든 태그: <input type="hidden" name="age" value="20">
+	   
+	   <hr>
+	   
+	   <!--  
+	       버튼류
+	   -->
+	   전송 버튼: <input type="submit" value="보내기">
+	   <hr>
+	   취소 버튼: <input type="reset" value="초기화">
+	   <hr>
+	   이미지 버튼(전송버튼): <input type="image" src="images/catty01.png">
+	   <hr>
+	   그냥 버튼: <input type="button" value="버튼" onclick="alert('클릭');">
+	   <hr>
+	   그냥 버튼: <input type="button" value="버튼" onclick="location.href='http://naver.com';">
+	   <hr>
+       그냥 버튼: <input type="button" value="버튼" onclick="this.form.submit();">
+       <hr>
+       그냥 버튼: <input type="button" value="버튼" onclick="this.form.reset();">
+       <hr>
+       <button type="submit">버튼 라벨</button>
+       <button type="reset">버튼 라벨</button>
+       <button type="button">버튼 라벨</button>
+       <hr>
+       
+       <input type="button" value="<img src=''> 보안실 접근하기">
+       <hr>
+       
+       <button>
+            <img src="images/bullet10.png">
+            보안실 접근하기
+       </button>
+       <hr>
+       
+       <input type="button" value="✏️ 글쓰기">
+       
+	   
+	   <hr>	   
+	   <input type="submit" value="보내기" style="background-color: #EDEDED;">
+	   
+	</form>
+	
+	<!--  
+	   1. HTML 4.01 + XHTML 1.0 + HTML5(소량)
+	   2. HTML5(위주) + 나머지
+	-->
+	
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

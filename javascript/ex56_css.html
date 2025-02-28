@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px; height: 150px;
+        }
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: dodgerblue; }
+
+        .draggable {
+            position: relative;
+            left: 0px; top: 0px;
+
+            -webkit-user-drag: none;
+            /* -moz-user-drag: none; */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex56_css.html -->
+    <h1 class="draggable">Drag & Drop(Relative)</h1>
+    <div id="box1" class="box draggable"></div>
+    <div id="box2" class="box draggable"></div>
+    <div id="box3" class="box draggable"></div>
+    <p class="draggable">위의 상자를 클릭해서 이동해보세요.</p>
+    <img src="images/catty01.png" class="draggable">
+    <img src="images/catty02.png" class="draggable">
+
+    <script>
+
+        let obj; //드래그 대상 객체(box1 or box2 or box3 or etc..)
+        let isDown = false;
+        let x = 0;
+        let y = 0;
+        let bx;
+        let by;
+
+        window.onmousedown = function() {
+
+            if (event.target.classList.contains('draggable')) {
+
+                isDown = true;  
+                
+                x = event.offsetX;
+                y = event.offsetY;
+
+                bx = event.target.getBoundingClientRect().x - parseInt(event.target.style.left != '' ? event.target.style.left : 0);
+                by = event.target.getBoundingClientRect().y - parseInt(event.target.style.top != '' ? event.target.style.top : 0);
+
+                obj = event.target; //드래그 대상
+
+                event.preventDefault();
+                return false;
+            }
+        };  
+
+        window.onmousemove = function() {
+            if (isDown) {
+                obj.style.left = event.clientX - x - bx + 'px';
+                obj.style.top = event.clientY - y - by + 'px';
+
+                //고스트 이미지 > 이미지를 드래그 했을 때의 기본 현상
+                
+            }
+        };
+
+        window.onmouseup = function() {
+            isDown = false;
+        };
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ex02.css">
+    <style>
+        li {
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex02.html -->
+    <!--
+    
+        HTML 문서에 CSS를 적용하는 방법
+
+        1. Inline Style Sheet
+        - 인라인 스타일 시트
+        - HTML 태그 내부에 직접 style 속성을 사용 > 서식을 지정하는 방법
+        - <태그 style="CSS 영역">
+        - 장점: 가독성이 높음
+        - 단점: CSS 구문을 여러 태그에 일일이 적용해야 함 (재사용이 불가능)
+
+        2. Embeded Style Sheet
+        - 내부 스타일 시트
+        - 페이지 상단에 <style> 태그를 사용 > 서식을 지정하는 방법
+        - 적용범위: 현재 페이지
+        - 장점: CSS 구문을 여러 태그에 일괄 적용(=재사용)
+        - 단점: 가독성이 낮음
+
+        3. External Style Sheet
+        - 외부 스타일 시트
+        - 별도의 CSS 파일을 사용(*.css를사용) > 서식을 지정하는 방법
+        - <link rel="stylesheet" href="CSS 파일 경로">
+        - 적용범위: 전체 페이지
+        - 장점: CSS 구문을 여러 태그 + 모든 페이지 적용 가능(+재사용성)
+        - 단점: 가독성이 가장 나쁨
+    
+    -->
+    <h1>목록</h1>
+
+    <ul>
+        <li >강아지</li>
+        <li >고양이</li>
+        <li >꽃게</li>
+    </ul>
+</body>
+</html>

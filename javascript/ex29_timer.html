@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      fieldset {
+        border: 1px solid gray;
+        border-radius: 5px;
+        width: 200px;
+        margin-bottom: 15px;
+      }
+      fieldset input {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ex29_timer.html-->
+    <h1>타이머</h1>
+
+    <form name="form1">
+      <fieldset>
+        <legend>setTimeout</legend>
+        <input type="button" value="버튼1" name="btn1" />
+        <input type="button" value="버튼2" name="btn2" />
+        <input type="text" name="txt1" />
+      </fieldset>
+      <fieldset>
+        <legend>setTimeout</legend>
+        <input type="button" value="버튼3" name="btn3" />
+        <input type="button" value="버튼4" name="btn4" />
+        <input type="text" name="txt2" />
+      </fieldset>
+      <fieldset>
+        <legend>setTimeout</legend>
+        <input type="button" value="버튼5" name="btn5" />
+        <input type="button" value="버튼6" name="btn6" />
+        <input type="text" name="txt3" />
+      </fieldset>
+    </form>
+
+    <script>
+      let txt1 = document.form1.txt1;
+      let txt2 = document.form1.txt2;
+      let txt3 = document.form1.txt3;
+
+      let btn1 = document.form1.btn1;
+      let btn2 = document.form1.btn2;
+      let btn3 = document.form1.btn3;
+      let btn4 = document.form1.btn4;
+      let btn5 = document.form1.btn5;
+      let btn6 = document.form1.btn6;
+
+      btn1.onclick = m1;
+      btn2.onclick = m2;
+      btn3.onclick = m3;
+      btn4.onclick = m4;
+      btn5.onclick = m5;
+      btn6.onclick = m6;
+
+      /*
+            타이머, Timer
+
+            1. id setTimeout(할일, 시간)
+                -1회성 타이머
+
+            2. id setInterval(할일, 시간)
+                -반복 타이머
+
+            3. clearTimeout(id)
+
+            4. clearInterval(id)
+        
+         */
+
+      let n = 1;
+      let timer;
+      function m1() {
+        timer = setTimeout(f1, 5000);
+        // setInterval(f1, 1000);
+        console.log(timer);
+      }
+      function f1() {
+        // alert("따르릉~");
+        txt1.value = n;
+        n++;
+        m1();
+      }
+      function m2() {
+        clearTimeout(timer);
+      }
+      function m3() {
+        timer = setInterval(f3, 1000);
+      }
+      function f3() {
+        // alert("따르릉~");
+        txt2.value = new Date().toLocaleTimeString();
+      }
+      function m4() {
+        clearInterval(timer);
+      }
+      //1. 시작 버튼 > 1회만 클릭 가능
+      //2. 시작 버튼 > N회 중복 클릭 가능
+
+      timer = 0;
+
+      function m5() {
+        // if (timer == 0) {
+        //   timer = setInterval(f5, 1);
+        //   console.log(timer);
+        // }
+        timer = setInterval(f5, 100);
+        timerList.Date;
+      }
+      function f5() {
+        txt3.value = n;
+        n++;
+      }
+      function m6() {
+        // clearInterval(timer);
+        // timer = 0;
+        // 순차적으로 중지
+        // clearInterval(timerList.pop());
+      }
+    </script>
+  </body>
+</html>

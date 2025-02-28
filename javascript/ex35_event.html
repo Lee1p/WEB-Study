@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- ex35_event.html-->
+     <h1>DOM Event</h1>
+
+     <input type="button" value="버튼(BOM)" id="btn1">
+     <input type="button" value="버튼(DOM)" id="btn2">
+
+     <script>
+
+        // let btn1 = document.getElementById('btn1');
+        // let btn2 = document.getElementById('btn2');
+        
+        // //BOM Event
+        // //- 이벤트 핸들러 사용(속성) > 정적 or 동적
+        // //- btn1.onclick = 함수;
+        // bnt1.onclick = function() {
+        //     alert('버튼1');
+        //     alert('버튼1');
+        //     alert('버튼1');
+        // };
+
+        // 자바스크립트는 세미콜론을 생략해도된다. 브라우저가 알아서 작성해줌 
+        
+        // btn1.onclick = m1;
+        // btn1.onclick = m2; //덮어쓰기
+        btn1.onclick = m3;
+
+
+        function m1() {
+            alert('m1');
+        }
+
+        function m2() {
+            alert('m2');
+        }
+        function m3() {
+            m1();
+            m2();
+        }
+
+        btn1.onclick = m4;
+        function m4() {
+            // alert('버튼1');
+            btn2.removeEventListener('click', m5);
+        }
+
+        // BOM 방식
+        // btn2.onclick = function() {
+        //     //이벤트 제거(BOM)
+        //     // 2번째 버튼클릭시 1번째 버튼에 이벤트를 막아놓을려면 null 값을 넣는다. 
+        //     btn1.onclick = null;
+        // }
+
+        //DOM Event
+        //- btn2.addEventListener(이벤트종류, 함수);
+        
+        // btn2.addEventListener('click', function() {
+        //     alert('버튼2');
+        // });
+
+        btn2.addEventListener('click', m5);
+        function m5() {
+            alert('하나');
+        }
+        
+        btn2.addEventListener('click', m6);
+        function m6() {
+            alert('둘');
+        }
+        
+        btn2.addEventListener('click', function() {
+            alert('셋');
+        })
+
+        
+
+
+     </script>
+
+</body>
+</html>

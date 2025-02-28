@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            position: absolute; 
+            left: 0; 
+            top: 0; 
+        }
+    </style>
+</head>
+<body>
+    <!-- ex53_css.html -->
+    
+    <script>
+
+        window.oncontextmenu = function() { return false; };
+
+        //화면 클릭 > 상자 생성 > 클릭한 곳으로 이동
+        window.onmousedown = function() {
+
+            if (event.buttons == 1) {
+                const box = document.createElement('div');
+
+                box.className = 'box one';
+                //box.style.backgroundColor = 'gold';
+
+                let r = parseInt(Math.random() * 256); //0~255
+                let g = parseInt(Math.random() * 256);
+                let b = parseInt(Math.random() * 256);
+                box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+                box.style.left = event.clientX - 75 + 'px';
+                box.style.top = event.clientY - 75 + 'px';
+
+                document.body.append(box);
+
+            } else if (event.buttons == 2) {
+
+                //누가 클릭된 객체? > 부모?
+                if (event.target.nodeName == 'DIV'
+                    && event.target.classList.contains('box')) {
+                    document.body.removeChild(event.target);
+                }
+
+            }
+
+
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- ex31_dom.html-->
+    <h1>DOM</h1>
+
+    <form name="form1">
+      <h2 id="title">Controls</h2>
+      <div>
+        <input type="text" name="txt1" id="txt1" class="txts" />
+        <input type="text" name="txt1" id="txt1" class="txts" />
+        <input type="text" name="txt1" id="txt1" class="txts" />
+      </div>
+    </form>
+
+    <script>
+      /* 
+        
+            1. BOM, Browser Object Model
+                - 트리 구조
+                - 고정된 트리 + 일부 태그 조작
+                - 기능 부족
+
+
+            2. DOM, Document Object Model
+                - 트리 구조
+                - 모든 태그 조작
+                - 기능 풍부
+            
+            DOM
+            - BOM > name 식별자만 사용 가능
+            - DOM > name, id, class 등.. > 태그 검색 범위 확장
+            - CSS 조작 가능
+            - 콘텐츠 조작 가능
+            - DOM Levle 1 > DOM Levle 2 > DOM Level 3 
+
+            BOM의 최상위 객체 > window
+            DOM의 최상위 객체 > document
+
+            여태 자바스크립트 작업?
+            1. 태그 검색
+
+            DOM에서 제공하는 태그 검색 도구(함수)
+            1. id 검색 > document.getElementById('id')
+            2. class 검색 > document.getElementsByClassName('class')
+            3. name 검색 > document.getElemnetByName('name')
+            4. 태그명 검색 > document.getElementsByTagName('tag');
+            ----------------------------------------------------------
+            5. CSS 선택자 검색
+                - ES6 추가(2014년) > 이전에는 각종 라이브러리 사용
+                - document.querySelector('선택자') > 단수 반환 
+                - document.querySelectorAll('선택자') > 복수 반환 
+        */
+
+      //<input type="text" name="txt1" id="txt1" class="txts">
+
+      //BOM
+      document.form1.txt1.value = "BOM";
+
+      //DOM(id)
+      document.getElementById("txt1").value = "DOM";
+
+      //BOM or DOM > 검색 결과 > 동일한 객체
+      console.log(document.form1.txt1 === document.getElementById("txt1")); //true
+
+      //DOM(class)
+      let txts = document.getElementsByClassName("txts");
+      //console.log(txts);
+
+      // for(let i=0; i<txts.length; i++) {
+      //     txts[i].value = i;
+      // }
+
+      //DOM(tag)
+      let list = document.getElementsByTagName("input");
+      console.log(list.length); //4
+
+      // for (let i=0; i<list.length; i++) {
+      //      list[i].value = i;
+      // }
+
+      // document.querySelector('#txt1').value = 'CSS';
+      // document.querySelector('.txts:nth-child(2)').value = 100;
+      // document.querySelector('.txts:nth-child(odd)').value = 100;
+    </script>
+  </body>
+</html>

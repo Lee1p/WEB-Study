@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>이미지</h1>
+    <input type="button" value="버튼1" name="btn1">
+    <hr>
+    <img src="images/cat01.jpg" name="cat1" alt="">
+    <hr>
+    <img src="images/cat02.jpg" name="cat2" alt="">
+    <hr>
+    <img src="images/switch_on.png" name="sw1" alt="">
+    <hr>
+    <img src="images/rect_icon01.png" name="icon1">
+    <hr>
+    <img src="images/dog01.jpg" name="dog1" alt="">
+
+    <script>
+        document.all['btn1'].onclick = m1;
+        function m1() {
+            document.images['cat1'].src = 'images/cat02.jpg';
+        }
+
+        document.images['cat2'].onmouseover = m2;
+        document.images['cat2'].onmouseout = m3;
+
+        function m2() {
+            document.images['cat2'].src = 'images/cat03.jpg'
+        }
+        function m3() {
+            document.images['cat2'].src = 'images/cat02.jpg'
+        }
+
+        document.images['sw1'].onclick = m4;
+
+        function m4() {
+            
+            //토글 버튼
+            // alert(document.images['sw1'].src);
+            // document.images['sw1'].src = 'images/sw1.jpg'
+
+            if (document.images['sw1'].src.endsWith('switch_on.png')) {
+                document.images['sw1'].src = 'images/switch_off.png';
+            } else {
+                document.images['sw1'].src = 'images/switch_on.png';
+                
+            }
+        }
+
+        var n = 1;
+
+        document.images['icon1'].onclick = m5;
+        function m5() {
+
+            n++; //이미지 파일명
+
+
+            document.images['icon1'].src
+                = 'images/rect_icon0' + (n + '').padStart(2,  '0') + '.png';
+        }
+
+
+        var no = 1
+
+        window.onkeydown = m6;
+        function m6() {
+
+            if (event.keyCode == 39) {
+                //오른쪽 > 다음 이미지
+                no++;
+                if (no > 5) {
+                    alert('마지막 이미지입니다.');
+                    no--;
+                } else if (event.keyCode == 37) {
+                    //왼쪽 > 이미지
+                    no--;
+                    if (no < 1) {
+                        alert('처음 이미지입니다.');
+                        no++;
+                        no = 5;
+                    }
+                }
+            } else if (event.keyCode == 37) {
+                //왼쪽 > 이전 이미지
+                no --;
+            }
+
+            document.images['dog1'].src = 'images/dog0' + no + '.jpg';
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+
+            CSS 문법
+            - 선택자 {속성명: 값;}
+
+            선택자, Selector
+            - HTML 페이지(소스)에서 특정 태그를 검색하는 도구
+            - 왜? 태그를 찾아서 태그 자신 or 내용물에 서식을 적용하기 위해서
+
+
+            CSS 선택자
+            1. 전체 선택자
+                - * {}
+                - 모든 태그를 검색한다.
+            2. 태그 선택자
+                - 태그명 {}
+                - 특정 태그를 검색한다.
+
+            3. 아이디 선택자
+                - <태그 id="">
+                - 태그명#아이디 {}
+                - #아이디 {}
+                - identity: 유일한 식별자(PK) > 한페이지 내에서
+
+            4. 클래스 선택자
+                - <태그 class="">
+                - 태그명.클래스명 {}
+                - .클래스명 {}
+                - class: 그룹 식별자 > 여러개 가능
+
+        */
+
+        /* * { 
+             color:blue;
+        }*/
+
+        /* p {
+            color: red;
+        }
+
+        div {
+            color: blue;
+        }
+
+        h1 {
+            color: green;
+        } */
+
+        #p2 {
+            color: orange;
+        }
+
+        .div2 {
+            color: orchid;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex03_selector.html-->
+    <h1>H1 태그입니다.</h1>
+
+    <p>P 태그입니다.</p>
+    <p id="p2"><b>P 태그입니다.</b></p>
+    <p>P 태그입니다.</p>
+
+    <div>DIV 태그입니다.</div>
+    <div class="div2"><b>DIV 태그입니다.</b></div>
+    <div class="div2">DIV 태그입니다.</div>
+
+    <!-- <p id="p2">P 태그입니다.</p> -->
+    <p>P 태그입니다.</p>
+
+    <hr>
+
+    <h2>찾아오는 길</h2>
+
+    <div>주소: 서울시 강남구 역삼동 한독빌딩</div>
+
+</body>
+</html>

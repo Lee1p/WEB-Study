@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+            1.background-size
+                
+    
+        */
+        #box1 {
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            background-image: url(images/dog03_small.jpg);
+
+            /* 종횡비 유지 > 컨테이너 맞춰서 배경 넣기
+                1. 장축 맞출지?
+                2. 단축 맞출지?
+            */
+
+            /* background-size: 400px auto; */
+            /* background-size: auto 400px; */
+            background-repeat: no-repeat; 
+            background-position: center center;
+            background-size: cover;
+
+            /* background-image: url(images/placeimg_200_300_arch.jpg);*/
+        } 
+
+        #box2 {
+            border: 1px solid black;
+            width: 600px;
+            height: 400px;
+            margin: 50px 0;
+
+            /* 그레이디언트, Gradient */
+            /* background: linear-gradient(red,blue,black,aqua); */
+            /* background: linear-gradient(to left, red, blue, aquamarine); */
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex44_background.html-->
+     <div id="box1"></div>
+     <div id="box2"></div>
+     <div id="box3"></div>
+</body>
+</html>

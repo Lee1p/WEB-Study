@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+
+        //객체 생성
+        const o1 = new Object;
+        const now = new Date();
+        const arr = new Array();
+
+        //생성자 함수
+        //- 클래스 역할을 대신(template, scheme, 명세)
+        //- 자바의 생성자의 역할 > 멤버 초기화
+
+        /* 
+        
+            class User {
+                private String name;
+                private int age;
+
+                public User(String name, int age) {
+                    this.name = name;
+                    this.age = age;
+                }
+            }
+        */
+
+        //생성자 함수 
+        //- 함수명이 파스칼 표기법으로 작성한다.(문법X)
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+
+        }
+
+        //생성자 함수는 올바르게 선언했지만, 호출을 잘못햇다.
+        //- 생성자 함수는 일반 함수 호출하듯이 호출하면 안된다.(***)
+        //User('홍길동', 20);
+
+        //올바른 호출?
+        //- 생성자 함수는 반드시 new 연산자와 함께 사용해야 한다.(***)
+        //1. new 호출 > new Object() 호출
+        //2. User() 호출 > 1번에서 만든 객체 초기화
+        //                  -프로퍼티를 생성(클래스 역할)
+        //                  -프로퍼티를 초기화(생성자 역할)
+        const hong = new User('홍길동', 20);
+        const lee = new User('이순신', 20);
+        const kim = new User('김민재', 30);
+
+        console.log(hong);
+        console.log(lee);
+        console.log(kim);
+
+        //자료형
+        // 1. number
+        // 2. string
+        // 3. boolean
+        // 4. object > ***
+
+        const today = new Date();
+        const list = new Array();
+        const user = new User('홍길동',20);
+        const obj = {};
+        const obj2 = new Object();
+
+        console.log(typeof today);
+        console.log(typeof list);
+        console.log(typeof user);
+        console.log(typeof obj);
+        console.log(typeof obj2);
+
+
+        console.log(today.construcor.name);
+        console.log(list.construcor.name);
+        console.log(user.construcor.name);
+        console.log(obj.construcor.name);
+        console.log(obj2.construcor.name);
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+       #tbl1 {
+     
+        border: 1px solid black;
+        border-collapse: collapse;
+       }
+       #tbl1 td {
+        border: 1px solid black;
+        width: 120px;
+        height: 100px;
+       }
+
+
+    </style>
+</head>
+<body>
+    <table id="tbl1">
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+    </table>
+    <script>
+        
+        let list = document.querySelectorAll('#tbl1 td'); 
+
+    
+
+        let listLength = list.length;
+
+        for (let i= 0; i < listLength; i++) {
+            list[i].addEventListener("click", function(event) {
+            event.target.innerHTML = '<img src="images/rect_icon01.png">';
+            });
+        }
+        // event.target은 반드시 addEventlistner 내부에서만 사용 가능.
+        // event.target을 사용하려면 event 객체가 존재해야함.
+        
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

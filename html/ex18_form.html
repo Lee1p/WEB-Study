@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex18_form.html -->
+	<!--  
+	
+	   <form>, 폼
+	   
+	   HTML Form + HTML Input Control
+	   - 입력 양식
+	   - 클라이언트(사용자)로부터 입력장치(키보드,마우스,터치 등)을 통해서 데이터를 입력받는 역할 + 서버로 전송하는 역할
+	   - ex) 텍스트박스, 라디오버튼, 체크박스, 버튼 등..
+	   
+	   
+	   <form> 태그
+	   - 스스로 렌더링 결과를 만들지 않는다.(=화면에 안보임)
+	   - 입력받은 값들을 취합해서 서버로 보내는 역할(입력+전송 컨테이너)
+	   
+	   form.method
+	   - 데이터를 서버로 전송하는 방식
+	   a. GET
+	       - http://localhost:8090/client/ex18_ok.jsp?age=20
+	       - 데이터를 전송할 URL 뒤에 붙여서 전송하는 방식(=Query String)
+	       - 데이터 노출 위험!!
+	       - URL(256자 이내) > 긴 데이터 전송 불가능
+	   
+	   b. POST
+	       - http://localhost:8090/client/ex18_ok.jsp
+	       - 데이터를 패킷 본문(body)에 넣어서 전송하는 방식(표준)
+	       - 데이터 노출 적음
+	       - 길이 제한 없음
+	   
+	   form.action
+	   - 데이터 수신할 서버측 프로그램의 URL
+	   - 서버 프로그래밍 언어로 구현한 프로그램의 URL(Servlet, JSP, Spring..)
+	   
+	-->
+	<h1>데이터 입력</h1>
+	
+	<form method="POST" action="ex18_ok.jsp">
+	   나이: <input type="text" name="age">
+	   <input type="submit" value="전송하기">	   
+	</form>
+	
+	<!--  
+	   개발자 도구
+	   1. F12
+	   2. Ctrl + Shift + I
+	   3. 커서 > 오른쪽 버튼 > 검사
+	-->
+	<h1>네이버 검색</h1>
+    
+    <form method="GET" action="https://search.naver.com/search.naver">
+       검색어: <input type="text" name="query">
+       <input type="submit" value="전송하기">      
+    </form>
+	
+		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

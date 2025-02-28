@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 20px solid greenyellow;
+            width: 250px; height: 188px;
+            overflow: hidden;
+        }
+        #list {
+            /* outline: 5px solid blue; */
+            width: 1250px;
+            display: flex;
+            transition: all 1s;
+        }
+        /* 
+        #box:hover #list {
+            transform: translateX(-1000px);
+        } 
+        */
+    </style>
+</head>
+<body>
+    <!-- ex60_css.html -->
+    <h1>고양이</h1>
+
+    <div id="box">
+        <div id="list">
+            <img src="images/cat01.jpg">
+            <img src="images/cat02.jpg">
+            <img src="images/cat03.jpg">
+            <img src="images/cat04.jpg">
+            <img src="images/cat05.jpg">
+        </div>
+    </div>
+    <hr>
+
+    <select id="sel1">
+        <option value="0">고양이1</option>
+        <option value="1">고양이2</option>
+        <option value="2">고양이3</option>
+        <option value="3">고양이4</option>
+        <option value="4">고양이5</option>
+    </select>
+
+    <hr>
+
+    <input type="range" id="range1" min="0" max="4" style="width: 290px;" value="0">
+
+    <hr>
+
+    <script>
+
+        const list = document.getElementById('list');
+        const sel1 = document.getElementById('sel1');
+
+        sel1.onchange = function() {
+            list.style.transform 
+                = `translateX(-${sel1.value * 250}px)`;
+        };
+
+        window.onkeydown = function() {
+            if (event.key >= 1 && event.key <= 5) {
+                list.style.transform 
+                = `translateX(-${(event.key - 1) * 250}px)`;
+            }
+        };
+
+
+        document.getElementById('range1').onchange = function() {
+
+            list.style.transform 
+                = `translateX(-${event.target.value * 250}px)`;
+
+        };
+
+
+    </script>
+    
+</body>
+</html>

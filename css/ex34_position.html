@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            <html>. <body>
+            - width: 100%;
+            - height: auto;
+        
+        */
+        html, body {
+            height: 100%;
+        }
+        body {
+            background-color: #DDDDDD;
+            margin: 0;
+            border: 5px solid tomato;
+        }
+        main {
+            background-color: white;
+            width: 800px;
+            /* 
+                %: 부모를 기준으로 하는 단위
+            */
+            height: 100vh; /* viewport height */
+            margin: 0 auto;
+
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        main > header {
+            border-bottom: 1px solid #999999;
+            padding: 30px;
+            text-align: center;
+        }
+        main > header > #search {
+            border: 1px solid #999999;
+            padding: 5px;
+            width: 400px;
+            outline: none;
+            font-size: 1.5em;
+        }
+
+        #list {
+            position:absolute;
+            left: 164px;
+            top: 0px;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            width: 410px;
+            display: block;
+            text-align: legf;
+        }
+
+    </style>
+</head>
+<body>
+    <!--ex34_position.html-->
+    <main>
+        <header>
+            <input type="text" id="search">
+            <div id="list">
+                <div class="item">자바</div>
+                <div class="item">자바 설치</div>
+                <div class="item">자바 JDK 설치</div>
+                <div class="item">자바 실행하기</div>
+                <div class="item">자바 프로그램 구현</div>
+            </div>
+        </header>
+        <h1>출력 내용</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non rerum tempore voluptas neque possimus officiis, aliquid natus sunt maxime alias voluptates, temporibus quos esse repellat id nesciunt autem et labore?
+        </p>
+    </main>
+
+    
+
+</body>
+</html>

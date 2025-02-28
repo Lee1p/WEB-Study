@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>DOM 조작</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <input type="button" value="버튼4" id="btn4">
+    <input type="button" value="버튼5" id="btn5">
+    <hr>
+    <div id="div1"></div>
+    <hr>
+    <img src="images/cat01.jpg" id="cat1" width="300">
+
+    <script>
+        let div1 = document.getElementById('div1');
+
+        //HTML 태그 조작하기
+        //1. 태그 자체
+        //2. 태그의 속성
+        //3. 태그의 콘텐츠
+
+
+
+        document.getElementById('btn1').addEventListener('click',function(){
+
+            //동적으로 태그 생성하기
+            //1. innerHTML
+            // - 쉽다. + 비용 저렴
+            // - 간단한 작업용
+            // - 모든 걸 문자열로 조작(***)
+            // div1.innerHTML = '<input type="text" size="10">'
+
+            //2. 표준 기능
+            // - 복잡하다. + 비용 고가
+            // - 복잡한 작업에는 훨씬 효율이 좋음 
+
+            //2.1 태그 객체 생성
+            let input = document.createElement('input'); //<input>
+
+            //2.2 속성 추가
+            let type = document.createAttribute('type'); // type=""
+            type.value = 'text'; //type="text"
+            input.setAttributeNode(type); //<input type="text">
+
+            //<input type="text" size="10">
+            input.setAttribute('size', 10);
+
+            div1.appendChild(input); //자식으로 추가
+
+            //  동적 콘텐츠 삽입: 텍스트나 간단한 HTML 요소를 삽입할때는 innerHTML을 사용해도된다. 
+
+            //<p align="center">문단입니다.</p>
+
+            let p = document.createElement('p'); //<p></p>
+            p.setAttribute('align', 'center'); //<p align="center"></p>
+
+            //PCDATA
+            let txt = document.createTextNode('문단입니다.');
+            //txt.value = '문단입니다.';
+
+
+            p.appendChild(txt); //<p align="center">문단입니다.</p>
+
+            //p.innerText = '문단입니다.';
+            // p.textContent = '문단입니다.';
+
+            div1.appendChild(p);
+
+
+        });
+        
+        document.getElementById('btn1').addEventListener('click',function(){
+
+            //태그 삭제하기
+            //<div id="div1">
+            //      <input type="text" size="10">
+            //      <hr>
+            //      <p align="center">문단입니다.</p>
+            //</div>
+
+            //1. innerHTML
+            //2. 조작 기능
+
+            // div1.innerHTML = '';
+
+            // div1.appendChild()
+            // div1.removeChild()
+            
+            // div1.removeChild(hr);
+            div1.removeChild(document.getElementsByTagName('hr')[0]);
+
+            
+        })
+
+        document.getElementById('btn3').addEventListener('click',function(){
+            
+            
+            //고양이 * 5마리 + 클릭 이벤트
+            /*
+           
+            for (let i = 0; i < 5; i++) {
+                let img = document.createElement('img'); // img 태그 생성
+                img.src = 'images/catty0' + (i + 1) + '.png'; // 이미지 경로 설정
+                div1.appendChild(img); // container에 img 태그 추가
+            }
+
+            let cats = document.querySelectorAll('#div1 > img');
+            //alert(cats.length);
+            for (let i=0; i<cats.length; i++) {
+                cats[i].onclick = f1;
+            }
+
+            */
+            
+
+           for (let i=0; i<5; i++) {
+
+                let img = document.createElement('img');
+
+                img.setAttribute('src','images/catty0' + (i+1) + '.png');
+
+                img.addEventListener('click', function(){
+                    // alert(event.target.src);
+                    div1.removechild(event.target);
+                })
+
+                div1.appendChild(img);
+
+           } 
+        });
+
+        document.getElementById('btn4').addEventListener('click',function(){
+            
+
+            let cat1 = document.getElementById('cat1');
+
+            //BOM
+            // alert(cat1.src);
+
+            //DOM 
+            // alert(cat1.getAttribute('src'));
+            // alert(cat1.getAttribute('width'));
+            // alert(cat1.setAttribute('height'));
+
+        })
+
+        document.getElementById('btn5').addEventListener('click',function(){
+            
+            //BOM
+            // cat1.src = 'images/cat02.jpg';
+            // cat1.width = 500;
+
+            //DOM
+            cat1.setAttribute('src', 'images/cat03.jpg');
+            cat1.setAttribute('width', 400);
+
+
+
+        });
+    </script>
+</body>
+</html>

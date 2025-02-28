@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 560px; height: 560px;
+            margin: 50px;
+            /* transition: all 1s; */
+        }
+        /* #box:hover {
+            transform: rotate(90deg);
+        } */
+    </style>
+</head>
+<body>
+    <!-- ex58_css.html -->
+    <div id="box"><img src="images/roulette.png"></div>
+
+    <script>
+
+        const roulette = document.querySelector('#box img');
+        let degree = 1;
+        let timer = 0;
+
+        roulette.onclick = function() {
+
+            if (timer == 0) {
+                timer = setInterval(function() {
+                    roulette.style.transform = `rotate(${degree}deg)`;
+                    degree+=10;
+                }, 10);
+            } else {
+                clearInterval(timer);
+                timer = 0;
+            }
+
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 50px;
+        }
+        #box1 { border: 1px solid black; width: 200px; height: 200px; }
+    </style>
+</head>
+<body>
+    <!-- ex51_css.html -->
+    <h1>CSS</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <hr>
+    <div id="box1">상자</div>
+
+    <script>
+
+        const box1 = document.getElementById('box1');
+
+        document.getElementById('btn1').onclick = function() {
+            
+            /* 
+                JavaScript > CSS 조작
+                1. 모든 태그 > style 속성 제공
+                    - 자바스크립트 > style 프로퍼티 제공
+                    - CSS 속성명 > 동명의 프로퍼티로 제공
+                        - 대부분 동일한 이름으로 제공
+                        - 케밥 표기법(-) > 캐멀 표기법으로 변경
+                    - CSS 속성값
+                        - 대부분 문자열로 작성
+
+            */
+
+            //<div id="box1">상자</div>
+            //<div id="box1" style='color:blue;'>상자</div>
+            //box1.style = 'color: blue;';
+            //box1.style = 'color: blue; font-size: 3rem;';
+
+            // box1.style.color = 'blue';
+            // //box1.style.fontSize = '3rem';
+            // box1.style['font-size'] = '3rem';
+            box1.classList.add('one');
+            box1.classList.add('two');
+
+        };
+
+        document.getElementById('btn2').onclick = function() {
+            //<div id="box1" style='background-color: yellow;'>상자</div>
+            //box1.style = 'background-color: yellow;';
+            box1.style.backgroundColor = 'yellow';
+        };
+
+
+        //console.log(window);
+
+        //비권장
+        // btn2.onclick = function() {
+        //     alert();
+        // };
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        
+            가시성, Visibility
+
+            visibility:
+            - visible, hidden
+            - hidden 으로 이미지를 가려도 요소의 영역이 그대로 남는다. (렌더링은 진행된다. CSSTree에 포함)
+            
+            display:
+            - none, block, inline
+            - 얘는 none 으로 속성값을 주면 이미지 요소의 영역이 같이 사라진다.(렌더링 진행 안됨. CSSTree에 제외)
+
+        */
+     
+        /* #cat2:hover {
+            visibility: hidden;
+        } */
+
+        /* #box:hover #cat2 { */
+        img:hover + img{
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex25_visibility.html-->
+     <div id="box">
+        <img src="images/catty01.png" alt="" id="cat1">
+        <img src="images/catty02.png" alt="" id="cat2">
+        <img src="images/catty03.png" alt="" id="cat3">
+     </div>
+</body>
+</html>

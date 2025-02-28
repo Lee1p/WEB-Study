@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+
+            HTML의 속성은 태그에 종속적이다.
+            - <body bgcolor=""> (O)
+            - <div bgcolor=""> (X)
+
+            CSS 속성은 태그에 독립적이다.
+            - 1개의 태그 > 모든 CSS 속성 적용 가능
+            - 1개의 CSS 속성 > 모든 태그에 적용 가능
+
+            background 속성
+            
+            1. background-color
+            - 배경 색상 지정
+
+            2. background-image
+            - 배경 이미지 지정
+
+            3. background-repeat
+            - 배경 이미지 반복 여부 지정
+
+            4. background-position
+            - 배경 이미지 위치 지정
+
+            5. background-attachment
+            - 배경 이미지 고정 여부 지정
+
+
+            CSS 색상 표현법
+            1. Color name: red, yellow, blue .. 140가지
+            2. RGB Color(HEX): #000000 ~ #ffffff
+            3. RGB Color(DEC): rgb(0, 0, 0) ~ rgb(255, 255, 255)
+            4. RGBA Color(DEC): rgba(0,0,0,1), Alpha Channel(불투명도: 0~1)
+            5. HEX + 불투명도: #RRGGBBAA
+        */
+
+        body {
+            /* background-color: rgba(255, 0, 0,1); */
+            background-image: url("images/naver_02.jpg");
+            background-color: red;
+            color: blue;
+
+            border: 10px solid black;
+
+            background-image: url("images/wall01.jpg");
+
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+    
+        }
+        
+        #box1 {
+            /* background-color: rgb(0, 255, 13,.7); */
+            background-image: url("images/catty02.png");
+            background-color: aqua;
+            color: yellow;
+        }
+         
+
+    </style>
+</head>
+<body>
+    <!-- ex11_background.html-->
+    <!-- div#box1>lorem-->
+    <div id="box1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil odio ad quaerat omnis voluptate sunt at magni, ab deserunt necessitatibus itaque veniam ullam neque quos non voluptatum tenetur voluptatibus sed.</div>
+
+    <!-- div#box2>lorem300-->
+     <div id="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis vel debitis assumenda? Eos officia nobis modi nemo sapiente hic, quibusdam, nisi obcaecati itaque, ut reprehenderit vero voluptatum voluptatibus minima et aliquam cupiditate? Odio nostrum cum neque quos consequatur, facere in aperiam suscipit necessitatibus. Rerum illum atque, nesciunt in architecto necessitatibus, delectus animi neque voluptates dolorem pariatur! Ex ratione perspiciatis est iusto quam numquam aliquid. Nam, beatae rerum amet ullam cum id incidunt. Ab aspernatur architecto voluptatum quidem sint labore eos necessitatibus aperiam voluptas, aut sunt dolorum nesciunt rerum obcaecati tempora repudiandae reiciendis voluptatibus quos adipisci quibusdam hic alias odio ipsam enim. Labore eaque dolorum neque vel dolorem adipisci dolor alias natus, quibusdam assumenda. Tenetur iusto nobis minus vero neque modi delectus repellendus id adipisci, possimus ab perferendis nemo cupiditate dolores quibusdam, cumque reiciendis inventore facere, debitis voluptatum. A recusandae officiis, tenetur inventore sunt non nesciunt quis nam vero, voluptatibus aut amet expedita ducimus alias? Veritatis porro dignissimos quos architecto dicta? Rem eligendi commodi praesentium, harum cumque autem saepe incidunt placeat consectetur repudiandae. Numquam fugit architecto iusto voluptate repellat itaque recusandae rem non pariatur minima ex, quas doloremque deleniti dicta, a, vero necessitatibus possimus adipisci distinctio. Rerum aspernatur necessitatibus eveniet corrupti ex veniam cupiditate excepturi! Veritatis minima nulla dolores eligendi soluta facere ipsa, ea voluptatem sapiente qui saepe deserunt officia, minus quod totam tempore fuga tempora? Officia id accusantium corrupti maiores asperiores distinctio quisquam laboriosam exercitationem dolor. Ipsum consequatur doloribus earum, blanditiis neque molestiae voluptate, a adipisci laudantium quod doloremque culpa tempora dicta rem provident optio aspernatur, ab incidunt explicabo deserunt in. Fugit similique minima unde est nisi architecto distinctio nostrum? Quis laboriosam vitae molestias odit, veniam, ea natus qui ducimus nesciunt nostrum commodi maxime esse odio quidem similique. Quae, aspernatur! Tempore, officia ex commodi distinctio modi voluptas eius magni enim?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis vel debitis assumenda? Eos officia nobis modi nemo sapiente hic, quibusdam, nisi obcaecati itaque, ut reprehenderit vero voluptatum voluptatibus minima et aliquam cupiditate? Odio nostrum cum neque quos consequatur, facere in aperiam suscipit necessitatibus. Rerum illum atque, nesciunt in architecto necessitatibus, delectus animi neque voluptates dolorem pariatur! Ex ratione perspiciatis est iusto quam numquam aliquid. Nam, beatae rerum amet ullam cum id incidunt. Ab aspernatur architecto voluptatum quidem sint labore eos necessitatibus aperiam voluptas, aut sunt dolorum nesciunt rerum obcaecati tempora repudiandae reiciendis voluptatibus quos adipisci quibusdam hic alias odio ipsam enim. Labore eaque dolorum neque vel dolorem adipisci dolor alias natus, quibusdam assumenda. Tenetur iusto nobis minus vero neque modi delectus repellendus id adipisci, possimus ab perferendis nemo cupiditate dolores quibusdam, cumque reiciendis inventore facere, debitis voluptatum. A recusandae officiis, tenetur inventore sunt non nesciunt quis nam vero, voluptatibus aut amet expedita ducimus alias? Veritatis porro dignissimos quos architecto dicta? Rem eligendi commodi praesentium, harum cumque autem saepe incidunt placeat consectetur repudiandae. Numquam fugit architecto iusto voluptate repellat itaque recusandae rem non pariatur minima ex, quas doloremque deleniti dicta, a, vero necessitatibus possimus adipisci distinctio. Rerum aspernatur necessitatibus eveniet corrupti ex veniam cupiditate excepturi! Veritatis minima nulla dolores eligendi soluta facere ipsa, ea voluptatem sapiente qui saepe deserunt officia, minus quod totam tempore fuga tempora? Officia id accusantium corrupti maiores asperiores distinctio quisquam laboriosam exercitationem dolor. Ipsum consequatur doloribus earum, blanditiis neque molestiae voluptate, a adipisci laudantium quod doloremque culpa tempora dicta rem provident optio aspernatur, ab incidunt explicabo deserunt in. Fugit similique minima unde est nisi architecto distinctio nostrum? Quis laboriosam vitae molestias odit, veniam, ea natus qui ducimus nesciunt nostrum commodi maxime esse odio quidem similique. Quae, aspernatur! Tempore, officia ex commodi distinctio modi voluptas eius magni enim?assumenda? Eos officia nobis modi nemo sapiente hic, quibusdam, nisi obcaecati itaque, ut reprehenderit vero voluptatum voluptatibus minima et aliquam cupiditate? Odio nostrum cum neque quos consequatur, facere in aperiam suscipit necessitatibus. Rerum illum atque, nesciunt in architecto necessitatibus, delectus animi neque voluptates dolorem pariatur! Ex ratione perspiciatis est iusto quam numquam aliquid. Nam, beatae rerum amet ullam cum id incidunt. Ab aspernatur architecto voluptatum quidem sint labore eos necessitatibus aperiam voluptas, aut sunt dolorum nesciunt rerum obcaecati tempora repudiandae reiciendis voluptatibus quos adipisci quibusdam hic alias odio ipsam enim. Labore eaque dolorum neque vel dolorem adipisci dolor alias natus, quibusdam assumenda. Tenetur iusto nobis minus vero neque modi delectus repellendus id adipisci, possimus ab perferendis nemo cupiditate dolores quibusdam, cumque reiciendis inventore facere, debitis voluptatum. A recusandae officiis, tenetur inventore sunt non nesciunt quis nam vero, voluptatibus aut amet expedita ducimus alias? Veritatis porro dignissimos quos architecto dicta? Rem eligendi commodi praesentium, harum cumque autem saepe incidunt placeat consectetur repudiandae. Numquam fugit architecto iusto voluptate repellat itaque recusandae rem non pariatur minima ex, quas doloremque deleniti dicta, a, vero necessitatibus possimus adipisci distinctio. Rerum aspernatur necessitatibus eveniet corrupti ex veniam cupiditate excepturi! Veritatis minima nulla dolores eligendi soluta facere ipsa, ea voluptatem sapiente qui saepe deserunt officia, minus quod totam tempore fuga tempora? Officia id accusantium corrupti maiores asperiores distinctio quisquam laboriosam exercitationem dolor. Ipsum consequatur doloribus earum, blanditiis neque molestiae voluptate, a adipisci laudantium quod doloremque culpa tempora dicta rem provident optio aspernatur, ab incidunt explicabo deserunt in. Fugit similique minima unde est nisi architecto distinctio nostrum? Quis laboriosam vitae molestias odit, veniam, ea natus qui ducimus nesciunt nostrum commodi maxime esse odio quidem similique. Quae, aspernatur! Tempore, officia ex commodi distinctio modi voluptas eius magni enim?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis vel debitis assumenda? Eos officia nobis modi nemo sapiente hic, quibusdam, nisi obcaecati itaque, ut reprehenderit vero voluptatum voluptatibus minima et aliquam cupiditate? Odio nostrum cum neque quos consequatur, facere in aperiam suscipit necessitatibus. Rerum illum atque, nesciunt in architecto necessitatibus, delectus animi neque voluptates dolorem pariatur! Ex ratione perspiciatis est iusto quam numquam aliquid. Nam, beatae rerum amet ullam cum id incidunt. Ab aspernatur architecto voluptatum quidem sint labore eos necessitatibus aperiam voluptas, aut sunt dolorum nesciunt rerum obcaecati tempora repudiandae reiciendis voluptatibus quos adipisci quibusdam hic alias odio ipsam enim. Labore eaque dolorum neque vel dolorem adipisci dolor alias natus, quibusdam assumenda. Tenetur iusto nobis minus vero neque modi delectus repellendus id adipisci, possimus ab perferendis nemo cupiditate dolores quibusdam, cumque reiciendis inventore facere, debitis voluptatum. A recusandae officiis, tenetur inventore sunt non nesciunt quis nam vero, voluptatibus aut amet expedita ducimus alias? Veritatis porro dignissimos quos architecto dicta? Rem eligendi commodi praesentium, harum cumque autem saepe incidunt placeat consectetur repudiandae. Numquam fugit architecto iusto voluptate repellat itaque recusandae rem non pariatur minima ex, quas doloremque deleniti dicta, a, vero necessitatibus possimus adipisci distinctio. Rerum aspernatur necessitatibus eveniet corrupti ex veniam cupiditate excepturi! Veritatis minima nulla dolores eligendi soluta facere ipsa, ea voluptatem sapiente qui saepe deserunt officia, minus quod totam tempore fuga tempora? Officia id accusantium corrupti maiores asperiores distinctio quisquam laboriosam exercitationem dolor. Ipsum consequatur doloribus earum, blanditiis neque molestiae voluptate, a adipisci laudantium quod doloremque culpa tempora dicta rem provident optio aspernatur, ab incidunt explicabo deserunt in. Fugit similique minima unde est nisi architecto distinctio nostrum? Quis laboriosam vitae molestias odit, veniam, ea natus qui ducimus nesciunt nostrum commodi maxime esse odio quidem similique. Quae, aspernatur! Tempore, officia ex commodi distinctio modi voluptas eius magni enim?
+     </div>
+
+    <img src="images/04.jpg" alt="기원전타자기">
+
+</body>
+</html>

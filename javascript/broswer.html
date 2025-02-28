@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- broswer.html-->
+     <!--
+    
+        HTML > (실행 과정) > 브라우저
+
+        1. HTML 문서를 읽는다.
+        2. Parse + 번역 > 바이트 코드(기계어)
+        -------------------------------------
+        3. 문서의 태그 > (메모리에) 트리 구조를 생성한다.(***)
+            - 1999년 이전 > 이름없음(브라우저마다 각자 적당한 트리 생성)
+            - 1999년 > DOM(Document Object Model)
+            - 브라우저가 문서의 구조를 이해하는 용도(기본 목적)
+            - 자바스크립트가 문서의 구조를 이해하고 태그를 접근/관리용
+
+        4. 문서의 CSS > (메모리에) 트리 구조를 생성한다.
+            - CSSOM(CSS Object Model)
+            - CSS를 적용한 태그만 가지고 트리 구조를 생성한다.
+            - 화면에 출력하는 용도 > 렌더링의 사전 구조
+
+        5. 3 + 4 > Render Tree를 생성한다.
+            - 브라우저가 최종적으로 화면에 출력할 태그의 구조와 CSS를 정의한 트리 구조
+        
+        6. Render Tree를 대상으로 화면에 출력될 요소들의 크기, 위치 등을 계산한다.
+        
+
+        7. 화면에 출력한다.
+
+        BOM <- (무관) -> DOM, CSSOM, RederTree
+
+        
+     -->
+
+    <h1>제목입니다.</h1>
+    <ul>
+        <li>항목입니다.</li>
+        <li>항목입니다.</li>
+        <li>항목입니다.</li>
+    </ul>
+    <hr>
+    <form name="form1">
+        <input type="text" name="txt1">
+    </form>
+
+</body>
+</html>
