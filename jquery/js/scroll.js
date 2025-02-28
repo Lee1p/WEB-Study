@@ -1,12 +1,11 @@
-// js > scroll.js
+//js > scroll.js
 
 //1. <div id="bar"></div> 동적 추가
-//2. css 적용
+//2. CSS 적용
 //3. 이벤트 적용
 
-
 $('<div class="scroll-bar-indicator"></div>')
-    .css ({
+    .css({
         width: 0,
         height: '7px',
         backgroundColor: 'cornflowerblue',
@@ -19,21 +18,10 @@ $('<div class="scroll-bar-indicator"></div>')
     })
     .prependTo('body');
 
+$(document).scroll(function() {
     
-        //스크롤 이벤트?
-        //- document.onscroll
-        $(document).scroll(function() {
-            // console.log(new Date());
+    let x = $(document).scrollTop() * 100 / ($(document).outerHeight() - $(window).outerHeight());
 
-            //스크롤바의 위치
-            document.title = $(document).scrollTop();
+    $('.scroll-bar-indicator').css('width', x + '%');
 
-            //문서의 세로길이(스크롤바의 최대 위치) : 100% = 스크롤바의 위치 : x 
-
-            // document.title = $(document).outerHeight();
-
-            let x = $(document).scrollTop() * 100 / ($(document).outerHeight() - $(window).outerHeight());
-
-            $('.scroll-bar-indicator').css('width', x + '%');
-
-        });
+});

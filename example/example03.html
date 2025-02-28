@@ -5,31 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1 {
-            color: gray;
+        div {
+            padding-top: 10px;
         }
+
+        div > input {
+            width: 70px;
+            height: 30px;
+        }
+        
+
     </style>
 </head>
 <body>
-    
-    <h1><b>데이터 입력</b></h1>
-    <form class="inputbox">
-        <div>
-        <label for="inputbox1">이름:</label>
-        <input type="text" id="inputbox1">
-    </div>
+    <h1 style="color: gray;">데이터 입력</h1>
+    <table>
+        <tr>
+            <td>이름:</td>
+            <td><input type="text" class="inputbox"></td>
+        </tr>
+        <tr>
+            <td>나이:</td>
+            <td><input type="text" class="inputbox"></td>
+        </tr>
+        <tr>
+            <td>별명:</td>
+            <td><input type="text" class="inputbox"></td>
+        </tr>
+    </table>
     <div>
-        <label for="inputbox2">나이:</label>
-        <input type="text" id="inputbox2">
+        <input type="button" value="Long" id="longbutton">
+        <input type="button" value="short" id="shortbutton">
     </div>
-    <label for="inputbox3"></label>
-        
-        
-    </form>
 
-
-    <script src="js/jquery-3.7.1.js"></script>
     <script>
+
+        document.getElementById('longbutton').addEventListener('click',function(){
+           let bar = document.getElementsByClassName('inputbox');
+           for (let i = 0; i < bar.length; i++) {
+            bar[i].style.width = "300px"; //모든 input의 너비 변경
+           } 
+        });
+        document.getElementById('shortbutton').addEventListener('click', function() {
+            let bars = document.getElementsByClassName('inputbox');
+            for (let i = 0; i < bars.length; i++) {
+                bars[i].style.width = "70px";
+            }
+        });
+
     </script>
 </body>
 </html>
