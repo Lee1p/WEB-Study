@@ -4,33 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <style>
-        body  > #box1 {
-            background-color: black;
-            width: 300px;
-            height: 300px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #box1 div{
-            color: white;
-        }
+       #tbl1 {
+			border: 1px solid gray;
+			border-collapse: collapse;
+			width: 600px;
+		}
+		
+		#tbl1 td {
+			border: 1px solid gray;
+			padding: 10px;
+		}
+		
+		#tbl1 td:first-child {
+			background-color: #DEDEDE;
+			width: 100px;
+			text-align: center;
+		}
+		
+		input {
+			border: 1px solid gray;
+			padding-left: 3px;
+		}
+		
+		#zip {
+			width: 60px;
+		}
+		
+		#address1, #address2 {
+			width: 98%;
+		}
     </style>
 </head>
 <body>
-    
-    <div id="box1">
-        <div>가운데 정렬</div>
-    </div>
+    <form name="form1">
+		<h1>우편 번호 검색</h1>
+		<table id="tbl1">
+			<tr>
+				<td>우편번호</td>
+				<td>
+					<input type="text" id="zip" name="zip" readonly />
+					<input type="button" value=" 우편번호검사하기" onclick="search();" />
+				</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" id="address1" name="address1" readonly /></td>
+			</tr>
+			<tr>
+				<td>상세주소</td>
+				<td><input type="text" id="address2" name="address2" /></td>
+			</tr>
+		</table>
+	</form>
 
- 
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script>
-           
+    function search() {
+
+        window.open("search_imp.html", "search", "width=300, height=200");		
+
+    };
+
     </script>
 </body>
 </html>
