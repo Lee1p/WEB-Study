@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <style>
+        img {
+        width: 100px;
+        opacity: 0.5;
+       }
+       #cat1 {outline: 1px solid black;} 
+       #cat2 {outline: 1px solid black;}
+       #cat3 {outline: 1px solid black;}
+
+       #box1 {
+        border: 1px solid black;
+        width: 400px;
+        height: 400px;
+        background-color: blue;
+       }
+    </style>
+</head>
+<body>
+    <h1>Interactions <small>Droppable</small></h1>
+
+    <div id="box1"></div>
+
+    <img src="images/catty01.png" id="cat1" class="cat">
+    <img src="images/catty02.png" id="cat2" class="cat">
+    <img src="images/catty03.png" id="cat3" class="cat">
+
+
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+
+        $('.cat').draggable({
+            opacity: 1.0,
+            cursor: 'move'
+        });
+
+        $('#box1').droppable({
+            drop: function(event, ui) {
+                // alert();
+
+                let catImageSrc = ui.draggable.attr('src');
+                $(this).css('background-image', 'url(' + catImageSrc + ')');
+                //어떤 고양이가 들어왔는지?
+                alert(ui.draggable.attr('src'));
+
+                // 고양이가 box1 내부에 있도록 설정
+                ui.draggable.draggable({
+                    containment: '#box1'
+                });
+            }
+        });
+
+        $('.cat').dblclick(() =>{
+            $(event.target).css('opacity',1).draggable({
+                containment: ''
+            });
+        });
+        
+        
+
+        
+           
+    </script>
+</body>
+</html>

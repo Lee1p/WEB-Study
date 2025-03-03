@@ -5,54 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div {
-            padding-top: 10px;
+        body {
+            display: flex;
+            justify-content: center;
+           
         }
 
-        div > input {
-            width: 70px;
-            height: 30px;
+        #register {
+            border: 1px solid black;
+            padding: 20px;
         }
-        
-
     </style>
 </head>
 <body>
-    <h1 style="color: gray;">데이터 입력</h1>
-    <table>
-        <tr>
-            <td>이름:</td>
-            <td><input type="text" class="inputbox"></td>
-        </tr>
-        <tr>
-            <td>나이:</td>
-            <td><input type="text" class="inputbox"></td>
-        </tr>
-        <tr>
-            <td>별명:</td>
-            <td><input type="text" class="inputbox"></td>
-        </tr>
-    </table>
-    <div>
-        <input type="button" value="Long" id="longbutton">
-        <input type="button" value="short" id="shortbutton">
-    </div>
-
+    <form id="register">
+        <h1>회원 가입</h1>
+        <label for="">아이디:</label>
+        <div>
+        <input type="text" id="register-input">
+        <div id="error-message" class="error"></div>
+        </div>
+    </form>
+  
     <script>
+            const registerInput = document.getElementById('register-input');
+        const errorMessage = document.getElementById('error-message');
 
-        document.getElementById('longbutton').addEventListener('click',function(){
-           let bar = document.getElementsByClassName('inputbox');
-           for (let i = 0; i < bar.length; i++) {
-            bar[i].style.width = "300px"; //모든 input의 너비 변경
-           } 
-        });
-        document.getElementById('shortbutton').addEventListener('click', function() {
-            let bars = document.getElementsByClassName('inputbox');
-            for (let i = 0; i < bars.length; i++) {
-                bars[i].style.width = "70px";
+        registerInput.addEventListener('keyup', function() {
+            const inputValue = registerInput.value; // 입력된 값 가져오기
+
+            if (inputValue.length < 4) {
+                errorMessage.textContent = "아이디가 너무 짧습니다."; // 오류 메시지 표시
+            } else {
+                errorMessage.textContent = ""; // 오류 메시지 숨기기
             }
         });
-
     </script>
 </body>
 </html>

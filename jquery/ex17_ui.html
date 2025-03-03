@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <style>
+        body { margin-bottom: 300px; }
+    </style>
+</head>
+<body>
+    <!-- ex17_ui.html -->
+    
+    <h1>Accordion</h1>
+
+    <div id="a1">
+        <h2>HTML</h2>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus delectus cumque, libero nam, fugiat molestiae molestias nobis sunt aperiam illum, quod architecto alias laboriosam? Delectus rem nam obcaecati sapiente eaque!</div>
+        <h2>CSS</h2>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, a alias commodi magnam itaque voluptatibus nemo voluptatem quisquam! Iure alias iusto nesciunt nisi! Optio, provident. Aliquid voluptatibus deleniti quas distinctio?</div>
+        <h2>JavaScript</h2>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione inventore iste id consectetur at dignissimos velit, repudiandae voluptas ipsa hic totam atque enim, libero perspiciatis facere accusamus magni optio ipsum.</div>
+    </div>
+
+
+    <h1>버튼</h1>
+
+    <input type="button" value="글쓰기" class="btn">
+    <input type="button" value="취소하기" class="btn">
+
+    <div class="btns">
+        <input type="button" value="글쓰기" class="btn">
+        <input type="button" value="취소하기" class="btn">
+    </div>
+
+    <h1>날짜</h1>
+
+    선택: <input type="date">
+    <hr>
+
+    선택: <input type="text" id="date1">
+    <hr>
+
+    <h1>대화상자</h1>
+
+    <input type="button" value="확인" id="btn1" class="btn">
+
+    <div id="dialog1">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, sint. Saepe voluptatem tempore ducimus eaque reiciendis ratione, vero debitis porro tenetur necessitatibus molestiae quia itaque dolorum, atque, quod amet? Autem?
+    </div>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+
+        $('#a1').accordion();
+        $('.btn').button();
+        $('.btns').controlgroup();
+
+        $('#date1').datepicker({
+            dateFormat: 'yy-mm-dd',
+            //minDate: -5,
+            //maxDate: 5
+            //minDate: '-1M 3D',
+            //maxDate: '1M 3D'
+            minDate: '2025-02-15',
+            maxDate: '2025-02-20'
+        });
+
+        $('#dialog1').hide();
+
+        $('#btn1').click(()=>{
+            
+            //$('#dialog1').show();
+            /*  
+            
+                대화상자
+                1. modal
+                    - 팝업창이 포커스를 독점한다.
+                    - 팝업창의 업무가 종료되기 전까지는 부모로 돌아갈 수 없다.
+
+                2. modeless
+                    - 팝업창과 부모창이 포커스 전환이 자유롭다.
+                    - 팝업창의 업무와 부모창의 업무를 병행되도 괜찮은 경우
+            
+            */
+
+            $('#dialog1').dialog({
+                title: '대화상자',
+                width: 300,
+                height: 400,
+                resizable: false,
+                draggable: false,
+                modal: true,
+                buttons: {
+                    // '텍스트': function() {
+                    //     alert();
+                    // }
+                    '확인': function() {
+
+                    },
+                    '취소': function() {
+                        $('#dialog1').dialog('close');
+                    }
+                }
+            });
+
+        });
+
+    </script>
+</body>
+</html>
